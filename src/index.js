@@ -46,16 +46,6 @@ const createApp = () => {
   // compression middleware
   app.use(compression());
 
-  // session middleware with passport
-  app.use(
-    session({
-      secret: process.env.SESSION_SECRET || 'my best friend is Cody',
-      store: sessionStore,
-      resave: false,
-      saveUninitialized: false,
-    })
-  );
-
   // static file-serving middleware
   app.use(express.static(path.join(__dirname, '..', 'public')));
 
